@@ -42,7 +42,7 @@ class TransitionGraph
 {
     friend struct CheckTransitionAndDo;
 
-    StateID                               InitStateID;
+    StateID                               InitStateID = -1;
 
     std::unordered_map<StateID, StatePtr>   StateMap;
     std::unordered_map<ConditionID, ConditionPtr> ConditionMap;
@@ -129,18 +129,5 @@ StatePtr TransitionGraph::GetInitialStatePtr() const
     return Iter->second;
 }
 
-using TransitionGraphPtr = std::shared_ptr<TransitionGraph>;
-
-// Users Holder
-class StateHolder
-{
-    const TransitionGraph&  _TransitionGraph;
-    std::weak_ptr<IState>   _CurrentState;
-
-public:
-    StateHolder(const TransitionGraph& Graph);
-
-    void Tick();
-};
 
 #endif //STATEMACHINE_STATEMACHINE_HPP

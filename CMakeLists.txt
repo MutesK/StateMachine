@@ -3,4 +3,4 @@ project(StateMachine)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(StateMachine main.cpp)
+add_executable(StateMachine main.cpp "StateMachine.hpp" "StateHolder.hpp" "StateHolder.cpp")

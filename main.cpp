@@ -1,5 +1,6 @@
 #include <iostream>
 #include "StateMachine.hpp"
+#include "StateHolder.hpp"
 
 class ActionState : public IState, RegisterStaticObject<ActionState>
 {
@@ -78,14 +79,12 @@ int main()
     Graph.SetInitialStateClassType<ActionState>();
     Graph.AttachTransitionGraph<ActionState, DieState, ActionToDieTransition>();
 
-
     StateHolder Holder(Graph);
 
-    while(true)
+    while (true)
     {
         Holder.Tick();
     }
-
 
     return 0;
 }
