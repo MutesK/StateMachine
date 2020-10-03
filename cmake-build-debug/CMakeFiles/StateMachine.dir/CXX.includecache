@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/junminkim/Workspace/C++/StateMachine/StateMachine.hpp
+vector
+-
+unordered_map
+-
+set
+-
+memory
+-
+functional
+-
+type_traits
+-
+StaticObject.hpp
+/Users/junminkim/Workspace/C++/StateMachine/StaticObject.hpp
+
+/Users/junminkim/Workspace/C++/StateMachine/StaticObject.hpp
+
+/Users/junminkim/Workspace/C++/StateMachine/main.cpp
+iostream
+-
+StateMachine.hpp
+/Users/junminkim/Workspace/C++/StateMachine/StateMachine.hpp
+
