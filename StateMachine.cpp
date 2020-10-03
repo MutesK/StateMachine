@@ -31,7 +31,7 @@ struct CheckTransitionAndDo
 
         Ptr->OnLeave();
         Ptr.reset();
-        Ptr = std::static_pointer_cast(TransiteTargetStatePtr);
+        Ptr = std::make_shared<std::remove_reference<decltype(*std::declval<TransiteTargetStatePtr>())>::type>(*TransiteTargetStatePtr);
         Ptr->OnEnter();
     }
 };
