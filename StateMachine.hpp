@@ -135,7 +135,7 @@ using TransitionGraphPtr = std::shared_ptr<TransitionGraph>;
 class StateHolder
 {
     const TransitionGraph&  _TransitionGraph;
-    StatePtr                _CurrentState;
+    std::weak_ptr<IState>   _CurrentState;
 
 public:
     StateHolder(const TransitionGraph& Graph);

@@ -30,7 +30,8 @@ struct CheckTransitionAndDo
         const auto& TransiteTargetStatePtr = StateMap[TransiteTargetStateID];
 
         Ptr->OnLeave();
-        *Ptr = *TransiteTargetStatePtr;
+        Ptr.reset();
+        Ptr = std::static_pointer_cast(TransiteTargetStatePtr);
         Ptr->OnEnter();
     }
 };
